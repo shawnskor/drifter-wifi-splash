@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desert Drifter Wi-Fi Access</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://yourdomain.com/background.jpg') no-repeat center center/cover;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    .container img {
+      max-width: 120px;
+      margin-bottom: 20px;
+    }
+    .container input[type="email"],
+    .container input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    .container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .container button {
+      width: 100%;
+      padding: 12px;
+      background: #e4b565;
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .container button:hover {
+      background: #ffc469;
+    }
+    .terms {
+      font-size: 12px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    .terms input {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://yourdomain.com/logo.png" alt="Desert Drifter RV Logo">
+    <h2>Welcome to Desert Drifter RV Resort</h2>
+    <p>Get connected and enjoy your stay.</p>
+    <form action="/api/authorize" method="POST">
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Mobile Number" required />
+      <label class="terms">
+        <input type="checkbox" name="terms" required />
+        I agree to the <a href="https://yourdomain.com/terms" target="_blank">terms of service</a>
+      </label>
+      <button type="submit">Connect to Wi-Fi</button>
+    </form>
+  </div>
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = "https://desertdrifterrv.com";
+    });
+  </script>
+</body>
+</html>

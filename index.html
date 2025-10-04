@@ -80,12 +80,39 @@
       <button type="submit">Connect to Wi-Fi</button>
     </form>
   </div>
-  <script>
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      window.location.href = "https://desertdrifterrv.com";
-    });
-  </script>
+<script>
+const form = document.querySelector('form');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  
+  // Get form data
+  const email = form.querySelector('input[name="email"]').value;
+  const phone = form.querySelector('input[name="phone"]').value;
+  
+  // Send data to Zapier webhook
+  fetch('https://hooks.zapier.com/hooks/catch/21518658/u9zfixo/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: email,
+      phone: phone,
+      timestamp: new Date().toISOString()
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+    // Redirect after successful webhook call
+    window.location.href = "https://desertdrifterrv.com";
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    // Still redirect even if webhook fails
+    window.location.href = "https://desertdrifterrv.com";
+  });
+});
+</script>
 </body>
 </html>

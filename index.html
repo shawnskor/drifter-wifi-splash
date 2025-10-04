@@ -7,26 +7,27 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: url('https://yourdomain.com/background.jpg') no-repeat center center/cover;
-      color: #fff;
+      background-color: #fff;
+      color: #333;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #000;
     }
     .container {
-      background: rgba(0, 0, 0, 0.7);
+      background: #f8f8f8;
       padding: 30px;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
       max-width: 400px;
       width: 100%;
     }
     .container img {
-      max-width: 120px;
+      max-width: 100%;
+      height: auto;
       margin-bottom: 20px;
     }
     .container input[type="email"],
@@ -34,7 +35,7 @@
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
-      border: none;
+      border: 1px solid #ccc;
       border-radius: 5px;
     }
     .container label {
@@ -56,7 +57,7 @@
     }
     .terms {
       font-size: 12px;
-      color: #ccc;
+      color: #555;
       margin-top: 10px;
     }
     .terms input {
@@ -66,7 +67,7 @@
 </head>
 <body>
   <div class="container">
-    <img src="https://yourdomain.com/logo.png" alt="Desert Drifter RV Logo">
+    <img src="https://shawnskor.github.io/drifter-wifi-splash/desert-drifter-logo.jpeg" alt="Desert Drifter RV Logo">
     <h2>Welcome to Desert Drifter RV Resort</h2>
     <p>Get connected and enjoy your stay.</p>
     <form action="/api/authorize" method="POST">
@@ -74,7 +75,7 @@
       <input type="tel" name="phone" placeholder="Mobile Number" required />
       <label class="terms">
         <input type="checkbox" name="terms" required />
-        I agree to the <a href="https://yourdomain.com/terms" target="_blank">terms of service</a>
+        I agree to the <a href="https://desertdrifterrv.com/terms" target="_blank">terms of service</a>
       </label>
       <button type="submit">Connect to Wi-Fi</button>
     </form>
